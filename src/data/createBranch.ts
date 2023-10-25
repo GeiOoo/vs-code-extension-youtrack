@@ -29,7 +29,7 @@ export const createBranch = async (data: IIssue) => {
 	const appName = data.customFields.find(field => field.name === 'App').value.name.toLowerCase();
 	const type = data.customFields.find(field => field.name === 'Type').value.name.toLowerCase();
 
-	const branchName = `${appName}/${type}/${id}-${name}`;
+	const branchName = `${appName}/${type}/${id}_${name}`;
 
 	// Create a new terminal and run a git create branch and check it out.
 	const terminal = vscode.window.createTerminal(`YouTrack Git`);
